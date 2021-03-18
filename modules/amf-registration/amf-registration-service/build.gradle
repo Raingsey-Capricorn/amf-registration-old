@@ -1,0 +1,16 @@
+dependencies {
+	compile project(":modules:amf-registration:amf-registration-api")
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../amf-registration-api/src/main/java"
+}
+
+group = "com.amf.registration"
+
+tasks.withType(JavaCompile) {
+	// Generated classes using Jodd library are unable to be read when compiled against JDK 11
+	sourceCompatibility = JavaVersion.VERSION_11
+	targetCompatibility = JavaVersion.VERSION_11
+}

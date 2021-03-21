@@ -1,5 +1,5 @@
 dependencies {
-//    compileOnly project(":modules:amf-registration:amf-registration-api")
+    compileOnly project(":modules:amf-registration:amf-registration-api")
     cssBuilder group: "com.liferay", name: "com.liferay.css.builder"
     compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
     compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"

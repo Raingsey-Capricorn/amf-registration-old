@@ -14,13 +14,11 @@
 <%@ page import="com.liferay.portal.kernel.language.LanguageUtil" %>
 <%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
 <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
-<%--
-<%@ page import="com.glean.training.gradebook.model.Assignment" %>
-<%@ page import="com.glean.training.gradebook.web.constants.MVCCommandNames" %>
---%>
+<%@ page import="com.amf.registration.model.AMFUser" %>
+<%@ page import="com.amf.registration.portlet.constants.MVCCommandNames" %>
 <%@ page import="com.liferay.portal.kernel.servlet.SessionErrors" %>
-<%@ page import="com.liferay.asset.kernel.model.AssetRenderer" %>
-<%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
+<%@ page import="com.liferay.asset.kernel.model.AssetRenderer"%>
+<%@ page import="com.liferay.portal.kernel.util.WebKeys"%>
 
 <liferay-frontend:defineObjects/>
 <liferay-theme:defineObjects/>

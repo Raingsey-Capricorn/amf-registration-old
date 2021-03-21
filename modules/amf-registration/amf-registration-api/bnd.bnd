@@ -5,6 +5,8 @@ Export-Package:\
 	com.amf.registration.exception,\
 	com.amf.registration.model,\
 	com.amf.registration.service,\
-	com.amf.registration.service.persistence
+	com.amf.registration.service.persistence,\
+	com.amf.registration.validator,\
+	com.amf.registration.constants
 -check: EXPORTS
 -includeresource: META-INF/service.xml=../amf-registration-service/service.xml

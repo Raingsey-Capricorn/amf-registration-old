@@ -106,7 +106,7 @@ public class AMFUserServiceHttp {
 	}
 
 	public static com.amf.registration.model.AMFUser getAmfUser(
-			HttpPrincipal httpPrincipal, long assignmentId)
+			HttpPrincipal httpPrincipal, long mafUserId)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -115,7 +115,7 @@ public class AMFUserServiceHttp {
 				_getAmfUserParameterTypes1);
 
 			MethodHandler methodHandler = new MethodHandler(
-				methodKey, assignmentId);
+				methodKey, mafUserId);
 
 			Object returnObj = null;
 

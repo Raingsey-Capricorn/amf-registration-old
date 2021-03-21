@@ -117,7 +117,6 @@ public class AMFUserLocalServiceImpl extends AMFUserLocalServiceBaseImpl {
         long userId = serviceContext.getUserId();
         User user = userLocalService.getUser(userId);
 
-        // Generate primary key for the assignment.
         long amfUserId = counterLocalService.increment(AMFUser.class.getName());
         AMFUser amfUser = createAMFUser(amfUserId);
         amfUser.setCompanyId(group.getCompanyId());

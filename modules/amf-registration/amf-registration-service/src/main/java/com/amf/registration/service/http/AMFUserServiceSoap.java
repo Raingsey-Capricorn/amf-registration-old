@@ -121,12 +121,12 @@ public class AMFUserServiceSoap {
 	}
 
 	public static com.amf.registration.model.AMFUserSoap getAmfUser(
-			long assignmentId)
+			long mafUserId)
 		throws RemoteException {
 
 		try {
 			com.amf.registration.model.AMFUser returnValue =
-				AMFUserServiceUtil.getAmfUser(assignmentId);
+				AMFUserServiceUtil.getAmfUser(mafUserId);
 
 			return com.amf.registration.model.AMFUserSoap.toSoapModel(
 				returnValue);

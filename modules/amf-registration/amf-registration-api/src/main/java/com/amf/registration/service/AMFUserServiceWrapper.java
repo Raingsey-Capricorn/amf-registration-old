@@ -88,10 +88,10 @@ public class AMFUserServiceWrapper
     }
 
     @Override
-    public com.amf.registration.model.AMFUser getAmfUser(long assignmentId)
+    public com.amf.registration.model.AMFUser getAmfUser(long amfUserId)
             throws com.liferay.portal.kernel.exception.PortalException {
 
-        return _amfUserService.getAmfUser(assignmentId);
+        return _amfUserService.getAmfUser(amfUserId);
     }
 
     /**

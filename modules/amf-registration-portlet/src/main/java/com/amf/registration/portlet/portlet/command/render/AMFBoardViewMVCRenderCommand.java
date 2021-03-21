@@ -33,7 +33,6 @@ public class AMFBoardViewMVCRenderCommand implements MVCRenderCommand {
     @Override
     public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
         addManagementToolbarAttribute(renderRequest, renderResponse);
-        addCommunityBoardAttributes(renderRequest);
         return "/view.jsp";
     }
 
@@ -49,55 +48,8 @@ public class AMFBoardViewMVCRenderCommand implements MVCRenderCommand {
         );
         renderRequest.setAttribute("toolbarDisplayContext", toolbarDisplayContext);
     }
-
-    /**
-     * @param renderRequest
-     */
-    private void addCommunityBoardAttributes(RenderRequest renderRequest) {
-        ThemeDisplay themeDisplay =
-                (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
-        // Resolve start and end for the search.
-        int currentPage = ParamUtil.getInteger(
-                renderRequest, SearchContainer.DEFAULT_CUR_PARAM,
-                SearchContainer.DEFAULT_CUR);
-        int delta = ParamUtil.getInteger(
-                renderRequest, SearchContainer.DEFAULT_DELTA_PARAM,
-                SearchContainer.DEFAULT_DELTA);
-        int start = ((currentPage > 0) ? (currentPage - 1) : 0) * delta;
-        int end = start + delta;
-
-        // Get sorting options.
-        // Notice that this doesn't really sort on title because the field is
-        // stored in XML. In real world this search would be integrated to the
-        // search engine  to get localized sort options.
-        String orderByCol = ParamUtil.getString(renderRequest, "orderByCol", "title");
-        String orderByType = ParamUtil.getString(renderRequest, "orderByType", "asc");
-
-        // Create comparator
-        OrderByComparator<AMFUser> comparator =
-                OrderByComparatorFactoryUtil.create(
-                        "AMFUser",
-                        orderByCol,
-                        !("asc").equals(orderByType));
-
-        // Get keywords.
-        // Notice that cleaning keywords is not implemented.
-        String keywords = ParamUtil.getString(renderRequest, "keywords");
-
-        // Call the service to get the list of assignments.
-//        List<AMFUser> assignments = _amfUserService.getAssignmentsByKeywords(
-//                themeDisplay.getScopeGroupId(), keywords, start, end,
-//                comparator);
-
-        // Set request attributes.
-//        renderRequest.setAttribute("assignments", assignments);
-//        renderRequest.setAttribute("assignmentCount", _amfUserService.getAssignmentsCountByKeywords(
-//                themeDisplay.getScopeGroupId(), keywords));
-
-    }
-
+    
     @Reference
     private Portal _portal;
-//    @Reference
-//    private AMFUserService _amfUserService;
+
 }

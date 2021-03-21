@@ -84,7 +84,7 @@ public interface AMFUserService extends BaseService {
             throws PortalException;
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public AMFUser getAmfUser(long assignmentId) throws PortalException;
+    public AMFUser getAmfUser(long amfUserId) throws PortalException;
 
     /**
      * Returns the OSGi service identifier.

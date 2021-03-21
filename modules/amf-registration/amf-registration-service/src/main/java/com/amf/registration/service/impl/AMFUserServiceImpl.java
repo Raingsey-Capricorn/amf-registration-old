@@ -107,8 +107,8 @@ public class AMFUserServiceImpl extends AMFUserServiceBaseImpl {
     }
 
     @Override
-    public AMFUser getAmfUser(long assignmentId) throws PortalException {
-        AMFUser amfUser = amfUserLocalService.getAMFUser(assignmentId);
+    public AMFUser getAmfUser(long amfUserId) throws PortalException {
+        AMFUser amfUser = amfUserLocalService.getAMFUser(amfUserId);
 
         return amfUser;
     }
